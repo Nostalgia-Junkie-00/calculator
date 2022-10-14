@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +7,7 @@
 }
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -15,6 +17,12 @@ body {
     background-position: center;
     background-color: rgba(0, 0, 0, 0.5);
     font-family: 'Noto Serif Devanagari', serif;
+}
+header h1 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 80px;
+    color: white;
+    text-shadow: 2px 2px #ff0000;
 }
 .calculator{
     display: flex;
@@ -37,7 +45,38 @@ section:last-child {
 .top {
     height: 13%;
     display: flex;
+    align-items: center;
     justify-content: center;
+}
+.display-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 75%;
+    background-color: #4a5245;
+    padding: 0.5rem;
+    border:  1px solid black;
+    box-shadow: 0px 0px 2px black;
+}
+.display {
+    height: 100%;
+    width: 100%;
+    background-color: #b8b8b8;
+    border-radius: 10px;
+    border:  1px solid black;
+    box-shadow: 0px -2px 2px black;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 1rem;
+}
+.equate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    text-align: center;
 }
 .middle {
     display: flex;
@@ -46,7 +85,6 @@ section:last-child {
     height: 17%;
     color: #e0fcfd;
     padding: 0.5rem 1rem;
-
 }
 .left {
     display: flex;
@@ -83,38 +121,6 @@ section:last-child {
     height: 57%;
     padding: 1rem;
 }
-
-.display-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 75%;
-    background-color: #4a5245;
-    padding: 0.5rem;
-    border:  1px solid black;
-    box-shadow: 0px 0px 2px black;
-
-}
-.display {
-    height: 100%;
-    width: 100%;
-    background-color: #b8b8b8;
-    border-radius: 10px;
-    border:  1px solid black;
-    box-shadow: 0px -2px 2px black;
-}
-button {
-    background-color: #e3e8eb;
-    border-radius: 10px;
-    border: 2px solid black;
-    box-shadow: 0px 0px 5px black;
-    font-size: 20px;
-    font-weight: bold;
-}
-button:hover {
-    filter:opacity(80%)
-}
 .buttons-container {
     height: 100%;
     width: 100%;
@@ -131,13 +137,23 @@ button:hover {
     grid-template-rows: repeat(6, 1fr);
     gap: 10px;
 }
-.right-buttons {
+.operation-buttons {
     display: grid;
     grid-template-columns: repeat(1, 90px);
     grid-template-rows: repeat(6, 1fr);
     gap: 10px;
 }
-
+button {
+    background-color: #e3e8eb;
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: 0px 0px 5px black;
+    font-size: 20px;
+    font-weight: bold;
+}
+button:hover {
+    filter:opacity(80%)
+}
 .red {
     background-color: #d32e3c;
     color: white;
