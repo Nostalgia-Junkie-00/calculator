@@ -1,8 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@100;200;300;400;500;600;700;800;900&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body {
-    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../images/topOfDesk.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: 'Noto Serif Devanagari', serif;
+}
+.calculator{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #114e85;
+    border-radius: 10px 10px 50px 50px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px black;
+    height: 50rem;
+    width: 30rem;
+}
+section {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+section:last-child {
+    border: none;
+}
+.top {
+    height: 13%;
+    display: flex;
+    justify-content: center;
+}
+.middle {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    height: 17%;
+    color: #e0fcfd;
+    padding: 0.5rem 1rem;
+
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+.left h2{
+    font-weight: 300;
+}
+.texas-box{
+    width: 90%;
+    height: 60%;
+    background-color: #161f1c;
+    border: 5px;
+}
+.right{
+    font-size: 35px;
+}
+.right h1 {
+    font-weight: 900;
+}
+.bottom {
+    height: 57%;
+    padding: 1rem;
+}
+.buttons-container {
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.display-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 75%;
+    background-color: #4a5245;
+    padding: 0.5rem;
+    border:  1px solid black;
+    box-shadow: 0px 0px 2px black;
+
+}
+.display {
+    height: 100%;
+    width: 100%;
+    background-color: #b8b8b8;
+    border-radius: 10px;
+    border:  1px solid black;
+    box-shadow: 0px -2px 2px black;
 }
