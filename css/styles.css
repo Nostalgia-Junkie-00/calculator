@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -77,6 +78,8 @@ section:last-child {
     align-items: center;
     font-size: 40px;
     text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    overflow: hidden;
 }
 .middle {
     display: flex;
