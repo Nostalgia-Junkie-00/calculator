@@ -6,16 +6,13 @@ const equals = document.querySelector('.equal');
 const clearButton = document.querySelector('.clear');
 
 //Variables
-let value = '';
-let operation = '';
-let a = 0;
-let b = 0;
+let equation = '';
 
 //Show numbers on display
 numButtons.forEach(number => {
     number.addEventListener('click', () => {
-        value += number.innerText;
-        display.innerText = value;
+        equation += number.innerText;
+        display.innerText = equation;    
     })
 })
 //Create functions for simple math operations.
@@ -34,45 +31,60 @@ function divide(a, b){
 //Create operate function that takes in an operator and 2 numbers that call the math operations.
 function operate(operator, a, b){
     switch(operator) {
-        case ('add'):
+        case '+':
             return add(a, b);
             break
-        case 'subtract':
+        case '-':
             return subtract(a, b);
             break
-        case 'multiply':
+        case '*':
             return multiply(a, b);
             break
-        case 'divide':
+        case '/':
             return divide(a, b);
             break
         default:
-            return "hello"
+            return "Not an operator"
     }
 }
 //Get operators from buttons
 operators.forEach(operator => {
     operator.addEventListener('click', () => {
-        a = parseInt(value);
+        a = parseInt(equation);
         operation = operator.id;
-        value += operator.innerText;
-        display.innerText = value;
+        switch(operation) {
+            case ('add'):
+                equation+= '+';
+                break
+            case 'subtract':
+                equation+= '-';
+                break
+            case 'multiply':
+                equation+= '*';
+                break
+            case 'divide':
+                equation+= '/';
+                break
+            default:
+                return "Not an operator"
+        }
+        display.innerText = equation;    
     })
 })
 //Solve equation
 function solve(){
-    b = parseInt(value.split(/[+*\/-]/g)[1]);
-    display.innerText = operate(operation, a, b);
+    let index = equation.search(/[+*\/-]/g)
+    let operation = equation.substring(index, index + 1);
+    let [a, b] = equation.split(operation);
+    display.textContent = operate(operation, parseInt(a), parseInt(b));
+
 }
 
 equals.addEventListener('click', solve);
 //Clear
 function clear(){
-    value = '';
-    operation = '';
-    a = 0;
-    b = 0;
-    display.innerText = value;
+    equation = '';
+    display.innerText = equation;
 }
 
 clearButton.addEventListener('click', clear);
