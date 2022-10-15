@@ -3,6 +3,7 @@ const display = document.querySelector('.display');
 const numButtons = document.querySelectorAll('.num');
 const operators = document.querySelectorAll('.operation');
 const equals = document.querySelector('.equal');
+const clearButton = document.querySelector('.clear');
 
 //Variables
 let value = '';
@@ -65,3 +66,13 @@ function solve(){
 }
 
 equals.addEventListener('click', solve);
+//Clear
+function clear(){
+    value = '';
+    operation = '';
+    a = 0;
+    b = 0;
+    display.innerText = value;
+}
+
+clearButton.addEventListener('click', clear);
