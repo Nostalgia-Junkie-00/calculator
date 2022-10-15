@@ -1,3 +1,19 @@
+//Get elements
+const display = document.querySelector('.display');
+const numButtons = document.querySelectorAll('.num');
+const operators = document.querySelectorAll('.operation');
+console.log(operators)
+
+//Variables
+let value = '';
+
+//Show numbers on display
+numButtons.forEach(number => {
+    number.addEventListener('click', () => {
+        value += number.innerText;
+        display.innerText = value;
+    })
+})
 //Create functions for simple math operations.
 function add(a, b){
     return a + b;
@@ -30,5 +46,3 @@ function operate(operator, a, b){
             return "hello"
     }
 }
-
-console.log(operate('add', 10, 10));
