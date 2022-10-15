@@ -2,10 +2,13 @@
 const display = document.querySelector('.display');
 const numButtons = document.querySelectorAll('.num');
 const operators = document.querySelectorAll('.operation');
-console.log(operators)
+const equals = document.querySelector('.equal');
 
 //Variables
 let value = '';
+let operation = '';
+let a = 0;
+let b = 0;
 
 //Show numbers on display
 numButtons.forEach(number => {
@@ -46,3 +49,19 @@ function operate(operator, a, b){
             return "hello"
     }
 }
+//Get operators from buttons
+operators.forEach(operator => {
+    operator.addEventListener('click', () => {
+        a = parseInt(value);
+        operation = operator.id;
+        value += operator.innerText;
+        display.innerText = value;
+    })
+})
+//Solve equation
+function solve(){
+    b = parseInt(value.split(/[+*\/-]/g)[1]);
+    display.innerText = operate(operation, a, b);
+}
+
+equals.addEventListener('click', solve);
